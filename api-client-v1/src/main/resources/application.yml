@@ -1,0 +1,25 @@
+server:
+  port: 8070
+  servlet:
+    context-path: /api/v1/
+
+spring:
+  application:
+    name: api-client-v1
+  datasource:
+    url: jdbc:postgresql://localhost:5532/clients
+    username: admin
+    password: admin
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+  kafka:
+    bootstrap-servers: localhost:9192
+    consumer:
+      group-id: client-info-group-id
+      auto-offset-reset: earliest

@@ -1,0 +1,79 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15
+    container_name: postgres-db
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: defaultdb
+    ports:
+      - "5532:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init-db:/docker-entrypoint-initdb.d/
+    networks:
+      - bank-network
+
+  zookeeper:
+    image: confluentinc/cp-zookeeper:latest
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2281
+      ZOOKEEPER_TICK_TIME: 2000
+    networks:
+      - bank-network
+
+  kafka:
+    image: confluentinc/cp-kafka:latest
+    depends_on:
+      - zookeeper
+    ports:
+      - "9192:9192"
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2281
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9192
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:9192
+      KAFKA_LISTENER_NAME: PLAINTEXT
+    networks:
+      - bank-network
+
+  api-client-v1:
+    build: ./api-client-v1
+    container_name: api-client-v1
+    ports:
+      - "8070:8070"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/clients
+      SPRING_DATASOURCE_USERNAME: admin
+      SPRING_DATASOURCE_PASSWORD: admin
+      SPRING_KAFKA_BOOTSTRAP_SERVERS: kafka:9192
+    depends_on:
+      - db
+    networks:
+      - bank-network
+
+  api-account-v1:
+    build: ./api-account-v1
+    container_name: api-account-v1
+    ports:
+      - "8060:8060"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/accounts
+      SPRING_DATASOURCE_USERNAME: admin
+      SPRING_DATASOURCE_PASSWORD: admin
+      SPRING_KAFKA_BOOTSTRAP_SERVERS: kafka:9192
+    depends_on:
+      - db
+      - kafka
+    networks:
+      - bank-network
+
+networks:
+  bank-network:
+    driver: bridge
+
+volumes:
+  postgres_data:
