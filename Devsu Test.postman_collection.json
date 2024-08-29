@@ -1,0 +1,1140 @@
+{
+	"info": {
+		"_postman_id": "df250eb2-0d8d-4e4d-94cc-8af753cc3b1e",
+		"name": "Devsu Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33561978"
+	},
+	"item": [
+		{
+			"name": "Clients",
+			"item": [
+				{
+					"name": "Get Clients",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8070/api/v1/clientes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8070",
+							"path": [
+								"api",
+								"v1",
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Clients By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8070/api/v1/clientes/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8070",
+							"path": [
+								"api",
+								"v1",
+								"clientes",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Client",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"password\": \"securePassword123\",\n    \"status\": \"ACTIVE\",\n    \"name\": \"John Doe\",\n    \"gender\": \"MALE\",\n    \"age\": 30,\n    \"address\": \"123 Main Street, Apt 4B, Springfield, IL, 62701\",\n    \"phone\": \"+1-555-123-4567\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8070/api/v1/clientes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8070",
+							"path": [
+								"api",
+								"v1",
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Client",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"password\": \"nuevoPass\",\n    \"address\": \"Nuevo address111\",\n    \"age\": 75\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8070/api/v1/clientes/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8070",
+							"path": [
+								"api",
+								"v1",
+								"clientes",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Client",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"password\": \"nuevoPass\",\n    \"address\": \"Nuevo address111\",\n    \"age\": 75\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8070/api/v1/clientes/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8070",
+							"path": [
+								"api",
+								"v1",
+								"clientes",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Accounts",
+			"item": [
+				{
+					"name": "Get Accounts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8060/api/v1/cuentas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8060",
+							"path": [
+								"api",
+								"v1",
+								"cuentas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Account By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8060/api/v1/cuentas/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8060",
+							"path": [
+								"api",
+								"v1",
+								"cuentas",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Account",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"initialBalance\": 550.00,\n    \"accountType\": \"AHORROS\", // AHORROS - CORRIENTE\n    \"client\": {\n        \"id\": 1\n    },\n    \"status\": \"ACTIVO\", // ACTIVO - INACTIVO\n    \"accountNumber\": \"1921959\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8060/api/v1/cuentas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8060",
+							"path": [
+								"api",
+								"v1",
+								"cuentas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Account",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"password\": \"nuevoPass\",\n    \"address\": \"Nuevo address111\",\n    \"age\": 75\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8060/api/v1/cuentas/103",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8060",
+							"path": [
+								"api",
+								"v1",
+								"cuentas",
+								"103"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Client",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"password\": \"nuevoPass\",\n    \"address\": \"Nuevo address111\",\n    \"age\": 75\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8060/api/v1/cuentas/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8060",
+							"path": [
+								"api",
+								"v1",
+								"cuentas",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Transactions",
+			"item": [
+				{
+					"name": "Get Transactions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8060/api/v1/cuentas/4/movimientos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8060",
+							"path": [
+								"api",
+								"v1",
+								"cuentas",
+								"4",
+								"movimientos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Transaction By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8060/api/v1/cuentas/1/movimientos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8060",
+							"path": [
+								"api",
+								"v1",
+								"cuentas",
+								"1",
+								"movimientos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Transaction",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"amount\": 500,\n    \"account\": {\n        \"accountNumber\": \"496825\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8060/api/v1/movimientos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8060",
+							"path": [
+								"api",
+								"v1",
+								"movimientos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Account",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"password\": \"nuevoPass\",\n    \"address\": \"Nuevo address111\",\n    \"age\": 75\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8060/api/v1/movimientos/103",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8060",
+							"path": [
+								"api",
+								"v1",
+								"movimientos",
+								"103"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Client",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"password\": \"nuevoPass\",\n    \"address\": \"Nuevo address111\",\n    \"age\": 75\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8060/api/v1/movimientos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8060",
+							"path": [
+								"api",
+								"v1",
+								"movimientos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Report",
+			"item": [
+				{
+					"name": "Generate Report",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8060/api/v1/reportes?dateFrom=28-08-2024&dateTo=29-08-2025&clientId=1&page=0&size=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8060",
+							"path": [
+								"api",
+								"v1",
+								"reportes"
+							],
+							"query": [
+								{
+									"key": "dateFrom",
+									"value": "28-08-2024"
+								},
+								{
+									"key": "dateTo",
+									"value": "29-08-2025"
+								},
+								{
+									"key": "clientId",
+									"value": "1"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Casos de Uso",
+			"item": [
+				{
+					"name": "1. Creacion de Usuarios",
+					"item": [
+						{
+							"name": "Create Client Jose Lema",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var responseJson = pm.response.json();",
+											"",
+											"var clientId = responseJson.id;",
+											"",
+											"pm.globals.set(\"JoseLemaId\", clientId);",
+											"",
+											"pm.test(\"Status code is 201\", function () {",
+											"    pm.response.to.have.status(201);",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"password\": \"1234\",\n    \"status\": \"ACTIVE\",\n    \"name\": \"Jose Lema\",\n    \"gender\": \"MALE\",\n    \"age\": 30,\n    \"address\": \"Otavalo sn y principal\",\n    \"phone\": \"098254785\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8070/api/v1/clientes",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8070",
+									"path": [
+										"api",
+										"v1",
+										"clientes"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Client Marianela Montalvo",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var responseJson = pm.response.json();",
+											"",
+											"var clientId = responseJson.id;",
+											"",
+											"pm.globals.set(\"MarianelaMontalvoId\", clientId);",
+											"",
+											"pm.test(\"Status code is 201\", function () {",
+											"    pm.response.to.have.status(201);",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"password\": \"5678\",\n    \"status\": \"ACTIVE\",\n    \"name\": \"Marianela Montalvo\",\n    \"gender\": \"FEMALE\",\n    \"age\": 30,\n    \"address\": \"Amazonas y NNUU\",\n    \"phone\": \"097548965\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8070/api/v1/clientes",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8070",
+									"path": [
+										"api",
+										"v1",
+										"clientes"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Client Juan Osorio",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var responseJson = pm.response.json();",
+											"",
+											"var clientId = responseJson.id;",
+											"",
+											"pm.globals.set(\"JuanOsorioId\", clientId);",
+											"",
+											"pm.test(\"Status code is 201\", function () {",
+											"    pm.response.to.have.status(201);",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"password\": \"1245\",\n    \"status\": \"ACTIVE\",\n    \"name\": \"Juan Osorio\",\n    \"gender\": \"MALE\",\n    \"age\": 30,\n    \"address\": \"13 de junio y Equinoccial\",\n    \"phone\": \"098874587\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8070/api/v1/clientes",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8070",
+									"path": [
+										"api",
+										"v1",
+										"clientes"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "2. Creacion de Cuentas de Usuario",
+					"item": [
+						{
+							"name": "Create Account Jose Lema",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 201\", function () {",
+											"    pm.response.to.have.status(201);",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"initialBalance\": 2000,\n    \"accountType\": \"AHORROS\",\n    \"client\": {\n        \"id\": {{JoseLemaId}}\n    },\n    \"status\": \"ACTIVO\",\n    \"accountNumber\": \"478758\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8060/api/v1/cuentas",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8060",
+									"path": [
+										"api",
+										"v1",
+										"cuentas"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Account Marianela Montalvo",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 201\", function () {",
+											"    pm.response.to.have.status(201);",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"initialBalance\": 100,\n    \"accountType\": \"CORRIENTE\",\n    \"client\": {\n        \"id\": {{MarianelaMontalvoId}}\n    },\n    \"status\": \"ACTIVO\",\n    \"accountNumber\": \"225487\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8060/api/v1/cuentas",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8060",
+									"path": [
+										"api",
+										"v1",
+										"cuentas"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Account Juan Osorio",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 201\", function () {",
+											"    pm.response.to.have.status(201);",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"initialBalance\": 0,\n    \"accountType\": \"AHORROS\",\n    \"client\": {\n        \"id\": {{JuanOsorioId}}\n    },\n    \"status\": \"ACTIVO\",\n    \"accountNumber\": \"495878\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8060/api/v1/cuentas",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8060",
+									"path": [
+										"api",
+										"v1",
+										"cuentas"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Account Marianela Montalvo 2",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 201\", function () {",
+											"    pm.response.to.have.status(201);",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"initialBalance\": 540,\n    \"accountType\": \"AHORROS\",\n    \"client\": {\n        \"id\": {{MarianelaMontalvoId}}\n    },\n    \"status\": \"ACTIVO\",\n    \"accountNumber\": \"496825\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8060/api/v1/cuentas",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8060",
+									"path": [
+										"api",
+										"v1",
+										"cuentas"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "3. Crear una nueva cuenta corriente",
+					"item": [
+						{
+							"name": "Create Account Jose Lema 2",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 201\", function () {",
+											"    pm.response.to.have.status(201);",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"initialBalance\": 1000,\n    \"accountType\": \"CORRIENTE\",\n    \"client\": {\n        \"id\": {{JoseLemaId}}\n    },\n    \"status\": \"ACTIVO\",\n    \"accountNumber\": \"585545\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8060/api/v1/cuentas",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8060",
+									"path": [
+										"api",
+										"v1",
+										"cuentas"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "4. Realizar Los Sigientes Movimientos",
+					"item": [
+						{
+							"name": "Create Transaction Uno",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 201\", function () {",
+											"    pm.response.to.have.status(201);",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"amount\": -575,\n    \"account\": {\n        \"accountNumber\": \"478758\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8060/api/v1/movimientos",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8060",
+									"path": [
+										"api",
+										"v1",
+										"movimientos"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Transaction Dos",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 201\", function () {",
+											"    pm.response.to.have.status(201);",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"amount\": 600,\n    \"account\": {\n        \"accountNumber\": \"225487\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8060/api/v1/movimientos",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8060",
+									"path": [
+										"api",
+										"v1",
+										"movimientos"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Transaction Tres",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 201\", function () {",
+											"    pm.response.to.have.status(201);",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"amount\": 150,\n    \"account\": {\n        \"accountNumber\": \"495878\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8060/api/v1/movimientos",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8060",
+									"path": [
+										"api",
+										"v1",
+										"movimientos"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Transaction Cuatro",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 201\", function () {",
+											"    pm.response.to.have.status(201);",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"amount\": -540,\n    \"account\": {\n        \"accountNumber\": \"496825\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8060/api/v1/movimientos",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8060",
+									"path": [
+										"api",
+										"v1",
+										"movimientos"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "5. Rreporte",
+					"item": [
+						{
+							"name": "Genera Reporte",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// Verificar que la respuesta tiene el estado 200",
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"// Convertir la respuesta a JSON",
+											"var jsonData = pm.response.json();",
+											"",
+											"// Validar que hay un item con account.number = 225487, amount = 600 y client.name = \"Marianela Montalvo\"",
+											"pm.test(\"Check for account number 225487 with amount 600 and client name Marianela Montalvo\", function () {",
+											"    var item = jsonData.content.find(item => ",
+											"        item.account.number === \"225487\" && ",
+											"        item.transaction.amount === 600.00 && ",
+											"        item.client.name === \"Marianela Montalvo\"",
+											"    );",
+											"    pm.expect(item).to.not.be.undefined;",
+											"});",
+											"",
+											"// Validar que hay un item con account.number = 496825, amount = -540 y client.name = \"Marianela Montalvo\"",
+											"pm.test(\"Check for account number 496825 with amount -540 and client name Marianela Montalvo\", function () {",
+											"    var item = jsonData.content.find(item => ",
+											"        item.account.number === \"496825\" && ",
+											"        item.transaction.amount === -540.00 && ",
+											"        item.client.name === \"Marianela Montalvo\"",
+											"    );",
+											"    pm.expect(item).to.not.be.undefined;",
+											"});",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8060/api/v1/reportes?dateFrom=20-08-2024&dateTo=29-08-2025&clientId={{MarianelaMontalvoId}}&page=0&size=10",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8060",
+									"path": [
+										"api",
+										"v1",
+										"reportes"
+									],
+									"query": [
+										{
+											"key": "dateFrom",
+											"value": "20-08-2024"
+										},
+										{
+											"key": "dateTo",
+											"value": "29-08-2025"
+										},
+										{
+											"key": "clientId",
+											"value": "{{MarianelaMontalvoId}}"
+										},
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
