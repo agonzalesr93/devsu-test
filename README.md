@@ -13,6 +13,7 @@ docker compose up
 Este comando construirá e iniciará los servicios definidos en el archivo docker-compose.yml. Los servicios incluidos son:
 
 api-client-v1: Expone servicios en el puerto 8070 con la ruta base /api/v1/.
+
 api-account-v1: Expone servicios en el puerto 8060 con la ruta base /api/v1/.
 
 ## Reiniciar el Entorno
